@@ -69,15 +69,29 @@ public class CmdController{
              cmdLine.startGame();
              game.start(cmdLine.getName(), rows, cols);
          }
-        else if(results[0].equalsIgnoreCase(commands[1]))
-             game.quit(); 
+        else if(results[0].equalsIgnoreCase(commands[1])){
+             cmdLine.setExit();
+             if(cmdLine.getExit().equalsIgnoreCase("y")){
+                 game.quit();
+             }
+             else if(cmdLine.getExit().equalsIgnoreCase("n")){
+                 cmdLine.startMessage();
+                 cmdLine.setCommand();
+             }
+             else{
+                 cmdLine.cmdError("You have entered a wrong command");
+                 cmdLine.setCommand();
+             }
+             
+         }
         //else if(results[0].equalsIgnoreCase(commands[2]))
             // game.save(); 
-        else if(results[0].equalsIgnoreCase(commands[3]))
-             game.pause(); 
-         
-        else if(results[0].equalsIgnoreCase(commands[4]))
+        else if(results[0].equalsIgnoreCase(commands[3])){
+             game.pause();
+        }
+        else if(results[0].equalsIgnoreCase(commands[4])){
              game.resume();
+        }
         
 //        else if(results[0].equalsIgnoreCase(commands[5])){
 //           try{
@@ -124,7 +138,6 @@ public class CmdController{
     
     public int getCols(){
         return cols;
-    }
-        
+    }        
         
 }

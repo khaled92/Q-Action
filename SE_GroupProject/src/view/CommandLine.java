@@ -43,7 +43,8 @@ public class CommandLine {
 
     public void setExit(){
         System.out.println("Are you sure you want to quit the game? (y/n)");
-        exit = scan.nextLine(); 
+        exit = scan.nextLine();
+
     }
 
     
