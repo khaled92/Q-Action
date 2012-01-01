@@ -75,7 +75,6 @@ public class CmdController{
                  game.quit();
              }
              else if(cmdLine.getExit().equalsIgnoreCase("n")){
-                 cmdLine.startMessage();
                  cmdLine.setCommand();
              }
              else{
